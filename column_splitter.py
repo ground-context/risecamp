@@ -41,7 +41,7 @@ git_id = gc.getNodeLatestVersions('risecamp')[0]
 git_sha = gc.getNodeVersion(git_id)['tags']['commit']['value']
 
 # create a new lineage edge version connecting the source file to the dest file
-gc.createLineageEdgeVersion(le_id, src_nv_id, dst_nv_id, {'git_commit': {'key':
+gc.createLineageEdgeVersion(le_id, dst_nv_id, src_nv_id, tags={'git_commit': {'key':
     'git_commit', 'value': git_sha, 'type': 'string'}})
 
 # acknowledge completion
